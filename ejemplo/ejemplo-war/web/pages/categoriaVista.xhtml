@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition template="../templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                >
+    <ui:define name="contenido">
+        <p:messages id="messages" showDetail="true" closable="true">
+            <p:autoUpdate />
+        </p:messages>
+        <h:form id="frmCategoria">
+            <p:panel>
+                <p:panelGrid id="pgCategoria" columns="2" layout="grid">            
+                    <p:outputLabel value="Nombre"><span class="rojo">*</span></p:outputLabel>
+                    <p:inputText value="#{categoriaControlador.categoria.nombr}"></p:inputText>
+                    <p:outputLabel value="descripcion"><span class="rojo">*</span></p:outputLabel>
+                    <p:inputText value="#{categoriaControlador.categoria.descripcionCategoria}"></p:inputText>
+
+                    <p:commandButton value="guardar" actionListener="#{categoriaControlador.guardarCategoria()}"></p:commandButton>
+                    <p:commandButton value="cancelar"></p:commandButton>
+                   
+                </p:panelGrid>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
